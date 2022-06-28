@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <img src="images/logo-spooky-studios.png" class="icon" width="64px" height="64px">
+        <div class="logo_name">Spooky Studios</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="index.html">
+          <i class='bx bxs-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="profiel.html">
+         <i class='bx bxs-user'></i>
+         <span class="links_name">Profiel</span>
+       </a>
+       <span class="tooltip">Profiel</span>
+     </li>
+     <li>
+       <a href="winkel.html">
+         <i class='bx bxs-cart'></i>
+         <span class="links_name">Winkel</span>
+       </a>
+       <span class="tooltip">Winkel</span>
+     </li>
+     <li>
+       <a href="missies.html">
+         <i class='bx bxs-flag'></i>
+         <span class="links_name">Missies</span>
+       </a>
+       <span class="tooltip">Missies</span>
+     </li>
+     <li>
+       <a href="instellingen.html">
+         <i class='bx bxs-cog' ></i>
+         <span class="links_name">Instellingen</span>
+       </a>
+       <span class="tooltip">Instellingen</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name">
+             <div class="name">Danny</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">Dashboard</div>
+      <div class="rectangle"></div>
+      <div class="rectangle-2"></div>
+      <div class="rectangle-3"></div>
+      <div class="rectangle-4"></div>
+      <div class="avatar-rectangle">
+        <img src="images/avatar.png" class="avatar">
+        <button class="btn-avatar">Verander Avatar</button>
+      </div>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+</body>
+</html>
